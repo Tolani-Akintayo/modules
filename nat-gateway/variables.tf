@@ -10,7 +10,7 @@ variable "project_name" {
 }
 
 variable "public_subnet_az2_id" {
-  description = "The ID of public subnet in AZ1"
+  description = "The ID of public subnet in AZ2"
   type = string
 }
 
@@ -34,12 +34,12 @@ variable "private_app_subnet_az2_id" {
   type = string
 }
 
-variable "private_app_subnet_az2_id" {
+variable "private_data_subnet_az1_id" {
   description = "The ID of private data subnet in AZ1"
   type = string
 }
 
-variable "private_app_subnet_az2_id" {
+variable "private_data_subnet_az2_id" {
   description = "The ID of private data subnet in AZ2"
   type = string
 }
