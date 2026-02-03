@@ -10,7 +10,7 @@ resource "aws_eip" "eip1" {
 # NAT gateway for private subnet internet access
 resource "aws_nat_gateway" "nat_gateway_az1" {
   allocation_id = aws_eip.eip1.id
-  subnet_id     = var.public_subnet_az2.id
+  subnet_id     = var.public_subnet_az2_id
 
   tags = {
     Name = "${var.environment}-${var.project_name}-natgw-az1"
