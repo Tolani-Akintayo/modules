@@ -6,7 +6,7 @@ resource "aws_security_group" "eice_security_group" {
   egress {
     description = "Allow SSH"
     from_port   = 22
-    to_port     = 22 
+    to_port     = 22
     protocol    = "tcp"
     cidr_blocks = [var.vpc_cidr]
   }

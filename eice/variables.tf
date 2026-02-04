@@ -8,12 +8,12 @@ variable "project_name" {
   type        = string
 }
 
-variable "vpc_id" {
-  description = "The ID of the VPC"
+variable "private_app_subnet_az1_id" {
+  description = "The ID of private app subnet in AZ1"
   type        = string
 }
 
-variable "vpc_cidr" {
-  description = "VPC CIDR block"
+variable "eice_security_group_id" {
+  description = "security group for the eice"
   type        = string
 }
