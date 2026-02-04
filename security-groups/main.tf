@@ -20,7 +20,7 @@ resource "aws_security_group" "eice_security_group" {
 resource "aws_security_group" "alb_security_group" {
   name        = "${var.environment}-${var.project_name}-alb-sg"
   description = "HTTP/HTTPS from the internet"
-  vpc_id      = var.vpc.id
+  vpc_id      = var.vpc_id
 
   ingress {
     description = "Allow HTTP"
@@ -55,7 +55,7 @@ resource "aws_security_group" "alb_security_group" {
 resource "aws_security_group" "app_security_group" {
   name        = "${var.environment}-${var.project_name}-app-sg"
   description = "HTTP/HTTPS from ALB, SSH from EICE"
-  vpc_id      = var.vpc.id
+  vpc_id      = var.vpc_id
 
   ingress {
     description     = "SSH from EICE SG"
@@ -99,7 +99,7 @@ resource "aws_security_group" "app_security_group" {
 resource "aws_security_group" "data_migration_server_security_group" {
   name        = "${var.environment}-${var.project_name}-dms-sg"
   description = "SSH from EICE"
-  vpc_id      = var.vpc.id
+  vpc_id      = var.vpc_id
 
   ingress {
     description     = "SSH from EICE SG"
@@ -126,7 +126,7 @@ resource "aws_security_group" "data_migration_server_security_group" {
 resource "aws_security_group" "database_security_group" {
   name        = "${var.environment}-${var.project_name}-db-sg"
   description = "MySQL/Aurora access from app and migration servers"
-  vpc_id      = var.vpc.id
+  vpc_id      = var.vpc_id
 
   ingress {
     description     = "MySQL/Aurora from App SG"
