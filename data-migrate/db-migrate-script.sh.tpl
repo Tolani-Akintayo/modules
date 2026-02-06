@@ -26,5 +26,9 @@ sudo flyway -url=jdbc:mysql://${RDS_ENDPOINT}:3306/${RDS_DB_NAME}?allowPublicKey
   -locations=filesystem:sql \
   migrate
 
-# Then shutdown after waiting for 7 minutes
-sudo shutdown -h +10
+# Then shutdown (stop) after waiting for 7 minutes
+# sudo shutdown -h +10
+
+
+# Then terminate the instance after waiting for 10 minutes
+nohup bash -c 'sleep 600 && aws ec2 terminate-instances --instance-ids $(ec2-metadata --instance-id | cut -d " " -f 2) --region $(ec2-metadata --availability-zone | cut -d " " -f 2 | sed "s/[a-z]$//")' > /dev/null 2>&1 &
