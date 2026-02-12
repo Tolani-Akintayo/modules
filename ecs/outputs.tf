@@ -1,4 +1,21 @@
+# ECS 
 output "ecs_service" {
   description = "The ECS service"
   value       = aws_ecs_service.ecs_service
+}
+
+# Added to github actions automation
+output "ecs_service_name" {
+    description = "The name of the ECS service"
+    value = aws_ecs_service.ecs_service.name
+}
+
+output "ecs_cluster_name" {
+    description = "The name of the ECS cluster"
+    value = aws_ecs_cluster.ecs_cluster.name
+}
+
+output "ecs_task_definition_name" {
+    description = "The name of the ECS task definition"
+    value = aws_ecs_task_definition.ecs_task_definition.family
 }
