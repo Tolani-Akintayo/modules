@@ -38,7 +38,7 @@ resource "aws_ecs_task_definition" "ecs_task_definition" {
 
   runtime_platform {
     operating_system_family = "LINUX"
-    cpu_architecture = var.architecture
+    cpu_architecture = "X86_64"
   }
 
   container_definitions = jsonencode([
