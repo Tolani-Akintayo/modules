@@ -28,7 +28,7 @@ resource "aws_lb_target_group" "app_target_group" {
     timeout             = 5
     healthy_threshold   = 5
     unhealthy_threshold = 2
-    matcher             = "200, 301, 302" #"200-399"
+    matcher             = "200" #"200-399"
   }
 
   tags = {
