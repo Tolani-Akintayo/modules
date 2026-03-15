@@ -111,7 +111,7 @@ resource "aws_ecs_service" "ecs_service"{
      container_port = 80
    }
 
-   depends_on = [aws_lb_listener.http_listener]
+   depends_on = [var.alb_http_listener_arn]
 
   tags = {
     Name = "${var.environment}-${var.project_name}-service"

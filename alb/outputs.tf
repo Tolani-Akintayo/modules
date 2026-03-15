@@ -12,3 +12,8 @@ output "application_load_balancer_zone_id" {
   description = "The zone ID of the Application Load Balancer"
   value = aws_lb.application_load_balancer.zone_id
 }
+
+output "alb_http_listener_arn" {
+  description = "The ARN of the Application Load Balancer HTTP listener"
+  value = aws_lb_listener.alb_http_listener.arn
+}

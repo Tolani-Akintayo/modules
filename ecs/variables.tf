@@ -78,3 +78,7 @@ variable "alb_target_group_arn" {
   type = string
 }
 
+variable "alb_http_listener_arn" {
+  description = "The ARN of the Application Load Balancer HTTP listener"
+  type = string
+}
