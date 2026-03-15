@@ -83,7 +83,7 @@ resource "aws_ecs_service" "ecs_service"{
   deployment_maximum_percent = 200
   enable_ecs_managed_tags = true
   propagate_tags = "SERVICE"
-  depends_on = [var.alb_http_listener_arn]
+
 
 
   # wait for service to reach steady state before marking complete
