@@ -1,6 +1,7 @@
 # Elastic IP for NAT gateway
 resource "aws_eip" "eip1" {
   domain = "vpc"
+  depends_on = [var.internet_gateway]
 
   tags = {
     Name = "${var.environment}-${var.project_name}-eip1"
