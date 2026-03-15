@@ -42,8 +42,3 @@ variable "acm_certificate_arn" {
   description = "ACM Certificate ARN for the ALB HTTPS listener"
   type        = string
 }
-
-variable "enable_deletion_protection" {
-  description = "Whether to enable deletion protection for the ALB"
-  type        = bool
-}
