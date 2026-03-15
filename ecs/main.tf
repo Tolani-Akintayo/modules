@@ -83,6 +83,8 @@ resource "aws_ecs_service" "ecs_service"{
   deployment_maximum_percent = 200
   enable_ecs_managed_tags = true
   propagate_tags = "SERVICE"
+  depends_on = [var.alb_http_listener_arn]
+
 
   # wait for service to reach steady state before marking complete
   wait_for_steady_state = true
@@ -110,8 +112,6 @@ resource "aws_ecs_service" "ecs_service"{
      container_name = "${var.environment}-${var.project_name}-container"
      container_port = 80
    }
-
-   depends_on = [var.alb_http_listener_arn]
 
   tags = {
     Name = "${var.environment}-${var.project_name}-service"
