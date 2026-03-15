@@ -27,6 +27,7 @@ resource "aws_subnet" "public_subnet_az1" {
   cidr_block              = var.public_subnet_az1_cidr
   availability_zone       = data.aws_availability_zones.available_zones.names[0]
   map_public_ip_on_launch = true
+  depends_on = [aws_internet_gateway.internet_gateway]
 
   tags = {
     Name = "${var.environment}-${var.project_name}-sn-public-az1"
@@ -38,6 +39,7 @@ resource "aws_subnet" "public_subnet_az2" {
   cidr_block              = var.public_subnet_az2_cidr
   availability_zone       = data.aws_availability_zones.available_zones.names[1]
   map_public_ip_on_launch = true
+  depends_on = [aws_internet_gateway.internet_gateway]
 
   tags = {
     Name = "${var.environment}-${var.project_name}-sn-public-az2"
